@@ -1,5 +1,6 @@
 package com.clientes.customers.controllers;
 
+import com.clientes.customers.entities.Customer;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,4 +37,15 @@ public class CustomerController {
         map.put("nombre3", "Luis");
         return map;
     }
+    @GetMapping("/prueba4")
+
+    public Customer prueba4() {
+        Customer c = new Customer();
+        c.setFirstname("Romulin");
+        c.setLastname("Castro");
+        c.setEmail("programador@programador");
+        c.setAddress("Programador");
+        return c;
+    }
+
 }
