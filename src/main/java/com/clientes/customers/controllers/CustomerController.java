@@ -37,6 +37,7 @@ public class CustomerController {
         map.put("nombre3", "Luis");
         return map;
     }
+
     @GetMapping("/prueba4")
 
     public Customer prueba4() {
@@ -47,5 +48,24 @@ public class CustomerController {
         c.setAddress("Programador");
         return c;
     }
+    @GetMapping("/prueba5")
+    public List<Customer> prueba5() {
+        List<Customer> customers = new ArrayList<>();
+        Customer c = new Customer();
+        c.setFirstname("Romulin");
+        c.setLastname("Castro");
+        c.setEmail("programador@programador");
+        c.setAddress("Programador");
+        customers.add(c);
 
+        Customer c2 = new Customer();
+        c2.setFirstname("Laura");
+        c2.setLastname("Castro");
+        c2.setEmail("programadora@programador");
+        c2.setAddress("Programadora");
+        customers.add(c2);
+        return customers;
+
+    }
 }
+
