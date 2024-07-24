@@ -3,7 +3,8 @@ import lombok.*;
 
 import java.util.Objects;
 
-@Getter @Setter @AllArgsConstructor @NoArgsConstructor @EqualsAndHashCode @ToString
+@Data
+
 public class Customer {
     private String firstname;
     private String lastname;
