@@ -5,49 +5,46 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 public class CustomerController {
-    @GetMapping("/prueba")
-    public String prueba() {
-        return "Hola Mundo";
-    }
 
+    @GetMapping("/customer/107")  // Traer un cliente especifico
+    public Customer getCustomer() {
 
-    @GetMapping("/prueba2")
-
-    public List<String> prueba2() {
-        List<String> list = new ArrayList<>();
-        list.add("Lucas");
-        list.add("Romulo");
-        list.add("Luis");
-        return list;
-    }
-
-
-    @GetMapping("/prueba3")
-
-    public Map<String, String> prueba3() {
-        Map<String, String> map = new HashMap();
-        map.put("nombre", "Romulo");
-        map.put("nombre2", "Theo");
-        map.put("nombre3", "Luis");
-        return map;
-    }
-
-    @GetMapping("/prueba4")
-
-    public Customer prueba4() {
         Customer c = new Customer();
+        c.setId(107);
         c.setFirstname("Romulin");
         c.setLastname("Castro");
         c.setEmail("programador@programador");
         c.setAddress("Programador");
         return c;
     }
+
+/*
+    @GetMapping("/customer")  // Traer todos los clientes
+    public List<Customer> getallCustomers() {
+        return null;
+    }
+    @GetMapping("/prueba")  // Agregar cliente
+    public void addCustomer(Customer customer) {
+    }
+
+    @GetMapping("/prueba")  // Eliminar cliente
+    public void removeCustomer {
+    }
+
+    @GetMapping("/prueba")  // Modificar cliente
+    public void updateCustomer() {
+    }
+
+    @GetMapping("/prueba")  // Buscar cliente
+    public List<Customer> searchCustomer() {
+        return null;
+    }*/
+
+
     @GetMapping("/prueba5")
     public List<Customer> prueba5() {
         List<Customer> customers = new ArrayList<>();
