@@ -10,23 +10,37 @@ import java.util.List;
 @RestController
 public class CustomerController {
 
-    @GetMapping("/customer/107")  // Traer un cliente especifico
-    public Customer getCustomer() {
+    private List<Customer> list = new ArrayList<>();
+    public CustomerController() {
 
         Customer c = new Customer();
-        c.setId(107);
+        c.setId(1);
         c.setFirstname("Romulin");
         c.setLastname("Castro");
         c.setEmail("programador@programador");
         c.setAddress("Programador");
-        return c;
+        list.add(c);
+
+        Customer c2 = new Customer();
+        c2.setId(2);
+        c2.setFirstname("Laura");
+        c2.setLastname("Castro");
+        c2.setEmail("programadora@programador");
+        c2.setAddress("Programadora");
+        list.add(c2);
     }
 
-/*
-    @GetMapping("/customer")  // Traer todos los clientes
-    public List<Customer> getallCustomers() {
+        @GetMapping("/customer/107")  // Traer un cliente especifico
+        public Customer getCustomer () {
         return null;
+        }
+
+        @GetMapping("/customer")  // Traer todos los clientes
+        public List<Customer> getallCustomers () {
+            return list;
+        }
     }
+    /*
     @GetMapping("/prueba")  // Agregar cliente
     public void addCustomer(Customer customer) {
     }
@@ -45,24 +59,6 @@ public class CustomerController {
     }*/
 
 
-    @GetMapping("/prueba5")
-    public List<Customer> prueba5() {
-        List<Customer> customers = new ArrayList<>();
-        Customer c = new Customer();
-        c.setFirstname("Romulin");
-        c.setLastname("Castro");
-        c.setEmail("programador@programador");
-        c.setAddress("Programador");
-        customers.add(c);
 
-        Customer c2 = new Customer();
-        c2.setFirstname("Laura");
-        c2.setLastname("Castro");
-        c2.setEmail("programadora@programador");
-        c2.setAddress("Programadora");
-        customers.add(c2);
-        return customers;
 
-    }
-}
 
