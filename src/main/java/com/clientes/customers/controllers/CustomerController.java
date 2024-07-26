@@ -2,6 +2,7 @@ package com.clientes.customers.controllers;
 
 import com.clientes.customers.entities.Customer;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -30,9 +31,14 @@ public class CustomerController {
         list.add(c2);
     }
 
-        @GetMapping("/customer/107")  // Traer un cliente especifico
-        public Customer getCustomer () {
-        return null;
+        @GetMapping("/customer/{id}")  // Traer un cliente especifico
+        public Customer getCustomer(@PathVariable Integer id) {
+            for (Customer customer : list) {
+                if (customer.getId() == id) {
+                    return customer;
+                }
+            }
+            return null;
         }
 
         @GetMapping("/customer")  // Traer todos los clientes
